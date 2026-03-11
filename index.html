@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hickertz Quick Search</title>
+
+  <meta name="theme-color" content="#0e1117" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon-192.png" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #0e1117;
+      color: white;
+      font-family: system-ui, sans-serif;
+    }
+
+    .app-shell {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .topbar {
+      flex: 0 0 auto;
+      padding: 10px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      background: #0e1117;
+      border-bottom: 1px solid #222;
+    }
+
+    iframe {
+      flex: 1 1 auto;
+      width: 100%;
+      border: 0;
+      background: #0e1117;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="topbar">🧀 Hickertz Quick Search</div>
+    <iframe
+      src="https://hickertz-article-search.streamlit.app/#hickertz-warehouse-article-quick-search"
+      allow="clipboard-read; clipboard-write"
+      loading="eager"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js");
+    }
+  </script>
+</body>
+</html>
